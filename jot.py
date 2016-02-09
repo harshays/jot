@@ -1,7 +1,7 @@
 from __future__ import print_function
 from datetime   import datetime as dt
 from blessings  import Terminal
-from utils      import JotCLI, JotConfig, JotUtils
+from utils      import JotCLI, JotConfig, JotUtils, FILE_DIR
 import os 
 import subprocess
 import getpass
@@ -98,7 +98,8 @@ class Jot(object):
 
 
 def run():
-    jot = Jot('./config.json')
+    config_path = os.path.join(FILE_DIR, 'config.json')
+    jot = Jot(config_path)
     jot.parse_and_call()
 
 if __name__ == '__main__':

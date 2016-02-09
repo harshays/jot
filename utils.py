@@ -5,6 +5,7 @@ import json
 from   argparse  import ArgumentParser
 from   blessings import Terminal
 
+FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 class JotCLI(object):
     'To parse CLI arguments'
@@ -48,7 +49,7 @@ class JotConfig(object):
     columns = ['count', 'timestamp', 'user']
     
     def __init__(self, fpath='./config.json'):
-        self.fpath = fpath
+        self.fpath = fpath if fpath else os.path.join(FILE_DIR, 'config.json')
         self.cfg   = self.read_config()
         self.dir   = self.get_dir()
 
