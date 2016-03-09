@@ -90,7 +90,7 @@ class Jot(object):
     def list(self):
         'list all jot files'
         for num, jfile in enumerate(self.utils.all_files(), 1):
-            self.utils.prettyprint('{}. {}'.format(num, jfile), 'bold')
+            self.utils.prettyprint('{}. {}'.format(num, jfile.rsplit('.', 1)[0]), 'bold')
 
     def config(self):
         'edit config in vim'
