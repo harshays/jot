@@ -8,10 +8,10 @@ CLI to quickly add ideas or log events to csv files.
 
 #### Using Jot
 ```sh
-jot food "sandwich"
-jot projects "Jot CLI"
-jot weight "XX lb"
-jot {{file}} "{{content}}"
+jot -a food "sandwich"
+jot -a projects "Jot CLI"
+jot -a weight "XX lb"
+jot -a {{file}} "{{content}}"
 jot --config
 jot --help
 ```
